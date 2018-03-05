@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>判断鼠标进入方向</title> 
+</head> 
+<body> 
+<style> 
+	html,body{
+		margin:0;padding:0;} 
+	.container{
+			list-style:none;
+			width:700px;height:700px;
+			border:1px solid red;
+			margin:0 auto;
+		}
+	.wrap{/*li*/
+		width:300px;height:300px;
+		background:#33aa00;
+		/*display:inline-block;*/
+		font-size:50px;text-align:center;
+		position:relative;
+		margin:5px;
+		overflow: hidden;
+		float:left;
+		line-height:300px;} 
+	.demo{/*li里的div*/
+			width:100%;height:100%;
+			position:absolute;
+			z-index:-1;
+			right:0;
+			bottom:0;			
+			background-color: rgba(25,25,25,.7);
+			}
+	/*这里有一点疑问，类之间好像有顺序，还是说enter要写在一起，outer要写在一起，没弄明白*/	
+		.enter-bottom{
+				z-index:1;
+				-webkit-animation-name:enter-bottom;
+				-webkit-animation-duration:0.3s; 
+			}
+		.enter-top{
+			z-index:1;
+			-webkit-animation-name:enter-top;
+			-webkit-animation-duration:0.3s; 
+		}
+		.enter-left{
+			z-index:1;
+			animation:enter-left 0.3s ease-in;
+			-webkit-animation-name:enter-left;
+			-webkit-animation-duration:0.3s; 
+		}
+		.enter-right{
+			z-index:1;
+			animation:enter-right 0.3s ease-in;
+			-webkit-animation-name:enter-right;
+			-webkit-animation-duration:0.3s; 
+		}
+		
+		.outer-top{
+			-webkit-animation-name:outer-top;
+			-webkit-animation-duration:0.3s;
+		}
+		.outer-bottom{
+			-webkit-animation-name:outer-bottom;
+			-webkit-animation-duration:0.3s;
+		}
+		.outer-left{
+			-webkit-animation-name:outer-left;
+			-webkit-animation-duration:0.3s;
+		}
+		
+		.outer-right{
+			-webkit-animation-name:outer-right;
+			-webkit-animation-duration:0.3s;
+		}
+		@-webkit-keyframes enter-top{
+			from{top:-300px}
+			to{top:0}
+		}
+		@-webkit-keyframes outer-top{
+			from{top:0}
+			to{top:-300px}
+		}
+		@-webkit-keyframes enter-left{
+			from{left:-300px}
+			to{left:0}
+		}
+		@-webkit-keyframes outer-left{
+			from{left:0}
+			to{left:-300px}
+		}
+		@-webkit-keyframes enter-right{
+			from{right:-300px}
+			to{right:0}
+		}
+		@-webkit-keyframes outer-right{
+			from{right:0}
+			to{right:-300px}
+		}
+		
+		@-webkit-keyframes enter-bottom{
+			from{bottom:-300px}
+			to{bottom:0}
+		}
+		@-webkit-keyframes outer-bottom{
+			from{bottom:0}
+			to{bottom:-300px}
+		}
+</style> 
+	<!--<div id="wrap">内容 
+	<div class='demo'>方向</div>
+	</div> 
+	<div id="wrap1">内容 
+	<div class='demo'>方向</div>
+	</div> -->
+	<ul class='container'>
+		<li id='wrap0' class='wrap'>内容<div id='demo0' class='demo'>方向1</div></li>
+		<li id='wrap1' class='wrap'>内容<div id='demo1' class='demo'>方向2</div></li>
+		<li id='wrap2' class='wrap'>内容<div id='demo2' class='demo'>方向1</div></li>
+		<li id='wrap3' class='wrap'>内容<div id='demo3' class='demo'>方向2</div></li>
+	</ul>
+<script type="text/javascript" src ="js/jquery-3.2.1.min.js"></script> 
+<script> 
+	var wrap=$('.wrap');
+	$('.wrap').each(function(i){/*遍历每一个li*/	
+	$('#wrap'+i).bind("mouseenter mouseleave", function(e) { 
+	var w = $(this).width(); 
+	var h = $(this).height(); 
+	var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1); 
+	var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1); 
+	var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; 
+	var eventType = e.type; 
+	var dirName = new Array('上方','右侧','下方','左侧'); 
+	if(e.type == 'mouseenter'){ 
+		switch(dirName[direction]){
+			case dirName[0]:
+				$('#demo'+i).attr('class','demo enter-top');			
+				break;
+			case dirName[1]:
+				$('#demo'+i).attr('class','demo enter-right');			
+				break;
+			case dirName[2]:
+				$('#demo'+i).attr('class','demo enter-bottom');			
+				break;
+			case dirName[3]:
+				$('#demo'+i).attr('class','demo enter-left');			
+				break;
+				
+		}
+	}else{ 
+		switch(dirName[direction]){
+				case dirName[0]:
+					$('#demo'+i).addClass(' outer-top');
+					setTimeout(function(){
+						$('#demo'+i).attr('class','demo outer-top');						
+					},300)
+					break;
+				case dirName[1]:
+					$('#demo'+i).addClass(' outer-right');
+					setTimeout(function(){
+						$('#demo'+i).attr('class','demo outer-right');
+					},300)
+					break;
+				case dirName[2]:
+					$('#demo'+i).addClass(' outer-bottom');
+					setTimeout(function(){
+						$('#demo'+i).attr('class','demo outer-bottom');
+					},300)
+					break;
+				case dirName[3]:
+					$('#demo'+i).addClass(' outer-left');
+					setTimeout(function(){
+						$('#demo'+i).attr('class','demo outer-left');
+					},300)
+					break;
+					
+			}
+	} 
+	}); 
+	})
+</script> 
+</body> 
+</html> 
