@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding:0;
+	background-color: #f1f2f3;
+}
+.title{
+	position:absolute;
+	width:200px;
+	height:50px;
+	left:50%;
+	margin:100px -50px;
+	font-size: 30px;
+}
+#main{
+	position:relative;
+	top:200px;
+}
+.box{
+	padding:15px 0 0 15px;
+	float:left;
+}
+.pic{
+	padding:0px;
+	border:1px solid black;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	box-shadow:0 0 10px #333333;
+}
+.pic img{
+	width:300px;
+	height:auto;
+}
+a{
+	cursor:pointer;
+	text-decoration: none;
+	color:black;
+			}
+.homepage{
+		position:fixed;
+		right:0;
+		bottom:0;
+		font-size: 5px;		
+			}

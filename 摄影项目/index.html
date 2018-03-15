@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/photo.css" /> 
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script  src='js/data.js'></script>
+		
+	</head>
+	<body onselectstart='return false'>
+		<!--导航条-->
+		<div class="nav">
+			<ul class="navul">
+				<li><a href='index.html'>首页</a></li>
+				<li><a href='course.html'>教程</a></li>
+				<li><a href='hualang.html'>碎片</a></li><!--瀑布流-->
+				<li><a href='waterfall.html'>博物馆</a></li><!--css3-->
+			</ul>
+			<div class='d'>
+			<div class='sousuo'>
+			<form class='sousuo-form'>		
+			<input  type='text' class='sousuo-input' id='sousuo-input'  placeholder='输入摄影关键字'/>
+			<!--<input type='submit' class='sousuo-sub' value=''/>-->
+			</form>
+		</div>
+		<div>	
+		<ul class='sousuo-list' style="display:none">
+				<li>搜索1</li>
+				<li>搜索2</li>
+		</ul>
+		</div>
+			</div>
+		</div>	
+		<!--一键到顶------------------------------------------------------------------------------------------->
+		<a href='javascript:;' id='gotop'  title='回到顶部'></a>
+		<!--整个主体内容---------------------------------------------------------------------------------------->
+		<div class='mainbody'>	
+		<!--轮播图-------------------------------------------------------------------------------------------->
+		<div class='roast'>
+		<div id="container">
+		    <div id="list" style="left: -800px;">
+		        <img src="img/17.jpg" alt="1"/>
+		        <img src="img/13.jpg" alt="1"/>
+		        <img src="img/14.jpg" alt="2"/>
+		        <img src="img/15.jpg" alt="3"/>
+		        <img src="img/16.jpg" alt="4"/>
+		        <img src="img/17.jpg" alt="5"/>
+		        <img src="img/13.jpg" alt="5"/>
+		    </div>
+		    <div id="buttons">
+		        <span index="1" class="on"></span>
+		        <span index="2"></span>
+		        <span index="3"></span>
+		        <span index="4"></span>
+		        <span index="5"></span>
+		    </div>
+		    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+		    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+		</div>
+		</div>
+		<!--摄影历史----------------------------------------------------------------------------------------->
+		<div id='timer'>
+			<div id='Ttitle'>摄影前世今生</div>
+			<div id='Tul'>
+				<ul>
+					<li title='0'>摄影术的诞生</li>
+					<li title='1'>新艺术的诞生</li>
+					<li title='2'>叛逆与新生</li>
+				</ul>
+			</div>
+			<div id='Timg'>
+				<div class='timgpart show' ><img src="img/26.jpg" /> <span class='picname'>1826年约瑟夫·尼埃普斯:《窗外》</span><div class="partintroduce">1826年的一天，尼埃普斯在房子顶楼的工作室里，拍摄了世界上第一张永久保存的照片。他当时的制作工艺是在白蜡板上敷上一层薄沥青，然后利用阳光和原始镜头，拍摄下窗外的景色，曝光时间长达八小时，再经过熏衣草油的冲洗，才获得了人类拍摄的第一张照片,尼埃普斯把他这种用日光将影像永久的记录在玻璃和金属板上的摄影方法，称作“日光蚀刻法”，又称阳光摄影法,这幅照片最后一次公开展览的时间为1898年，此后一度销声匿迹，直至1952年才重新面世</div></div>
+				<div class='timgpart'><img src="img/30.jpg" /> <span class='picname'>1838年路易斯·达盖尔:《巴黎寺院街》</span><div class="partintroduce">他用感光过的镀银铜板，浸泡在加热的盐水中获得定影而完成了自己的“达盖尔法”。他的作品世存很少，《巴黎寺院街》是他在1838年摄制的。由于曝光时间要长达数分钟之久，因此很难留下人的行迹和身影。达盖尔因银版法成为举世公认的摄影术发明人。银版法作为一种实用可行的摄影方法，虽然价格昂贵，但影像质量极为精细，	自公布于世，便迅速在欧美应用，直到19世纪50年代的胶棉湿版工艺出现之前，一直是最主要的摄影技法。</div></div>
+				<div class='timgpart'><img src="img/24.jpg" /> <span class='picname'>1850年杜冈·马克西姆《阿布·辛拜勒神庙》</span><div class="partintroduce">从画面上看，一个蒙面的埃及向导正坐在拉美西斯二世巨大的石像上，而石像尚未完全出土。出土后的石像高达二十米，极其雄伟壮观。杜冈当时拍摄这幅画面可能只是出于记录，并以人做对比显示石像的高大，但这张照片却被后人在摄影史上常常引用，并产生无尽遐想。蒙面的埃及向导在石像上停留是短暂的，却高高在上，石像伫立在神庙前是永恒的，却木然地任凭向导端坐其上。有人说这或许可被视为摄影术辉煌成功的象征，因为摄影是瞬间的艺术，而传统艺术总与永久相伴随</div></div>
+			</div>
+		</div>
+		<!----达人推荐-------------------------------------------------------------------------------------->
+		<div class='daren'>
+		<p class='daren-p'>达人推荐</p>
+		<div class='daren-main'>
+		<ul class='one-intro'>
+			<li>Reuven Halevi</li>
+			<li>Salvador Cueva</li>
+		</ul>
+		<div class='main-two'>
+		<ul class='two-ul'>
+			<li id='li0' class='wrap'><img src='img/3.jpg'/><div id='demo0' class='demo'>Light</div></li>
+			<li id='li1' class='wrap'><img src='img/9.jpg'/><div id='demo1' class='demo'>Porvoo</div></li>
+			<li id='li2' class='wrap'><img src='img/5.jpg'/><div id='demo2' class='demo'>Dash</div></li>
+			<li id='li3' class='wrap'><img src='img/7.jpg'/><div id='demo3' class='demo'>Dance</div></li>
+			<li id='li4' class='wrap'><img src='img/4.jpg'/><div id='demo4' class='demo'>Pear</div></li>
+			<li id='li5' class='wrap'><img src='img/6.jpg'/><div id='demo5' class='demo'>Taste</div></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	
+	<!----器材展示-------------------------------------------------------------------------------------->
+		<div class='daren'>
+		<p class='daren-p'>器材展示</p>
+		<div class='daren-main'>
+		<ul class='one-intro'>
+			<li>相机</li>
+			<li>配件</li>
+		</ul>
+		<div class='main-two'>
+		<ul class='two-ul'>
+			<li id='mode0' class='wrap'><img src='img/34.jpg'/><div id='model0' class='model'>富士笔记,与23毫米的相爱相杀 </div></li>
+			<li id='mode1' class='wrap'><img src='img/41.jpg'/><div id='model1' class='model'>玩摄影，为什么要凑齐三大元</div></li>
+			<li id='mode2' class='wrap'><img src='img/40.jpg'/><div id='model2' class='model'>灯泡镜头轻量化滤镜系统解决方案</div></li>
+			<li id='mode3' class='wrap'><img src='img/38.jpg'/><div id='model3' class='model'>宝丽来Polaroid 240卡纸问题分析</div></li>
+			<li id='mode4' class='wrap'><img src='img/36.jpg'/><div id='model4' class='model'>如果让我选一个最爱的塑光配件</div></li>
+			<li id='mode5' class='wrap'><img src='img/39.jpg'/><div id='model5' class='model'>FUJIFILM 富士 X-Pro2</div></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+	
+		
+	<!----风格标签-------------------------------------------------------------------------------------->
+		<div class='daren'>
+		<p class='daren-p'>风格标签</p>
+		<div class='daren-main'>
+		<ul class='one-intro'>
+			<li>色彩</li>
+			<li>抓拍</li>
+		</ul>
+		<div class='main-two'>
+		<ul class='two-ul'>
+			<li id='label0' class='wrap'><img src='img/25.jpg'/><div id='labell0' class='model'>路上行人 </div></li>
+			<li id='label1' class='wrap'><img src='img/27.jpg'/><div id='labell1' class='model'>夜巷</div></li>
+			<li id='label2' class='wrap'><img src='img/42.jpg'/><div id='labell2' class='model'>藏族女孩</div></li>
+			<li id='label3' class='wrap'><img src='img/44.jpg'/><div id='labell3' class='model'>灯塔</div></li>
+			<li id='label4' class='wrap'><img src='img/19.jpg'/><div id='labell4' class='model'>卡住的猫</div></li>
+			<li id='label5' class='wrap'><img src='img/43.jpg'/><div id='labell5' class='model'>正青春</div></li>
+		</ul>
+		</div>
+		</div>
+	</div>
+
+		</div>
+		<!----页脚---------------------------------------------------------------------------------------------------->
+		<div class='footer'>
+			<span class='footer-s span-1'>欢迎加入</span>
+			<span class='footer-s span-2'>官方微博：000000</span>
+		</div>
+		<script type='text/javascript' src="js/photo.js"></script>
+		
+	</body>
+</html>

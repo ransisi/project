@@ -1,0 +1,492 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-size:14px;
+	-webkit-font-smoothing:antialiased;
+	background-color: #f1f2f3;
+}
+a{
+	color: #fff;
+	text-decoration:none;
+}
+.mainbody{
+	/*border:5px solid black;*/
+	position: relative;	
+	top:60px;
+	height: 100%;/*意为让父元素的高度随子元素的高度的变化而变化，还有一些其他办法*/
+	width:1200px;
+	margin:0 auto;/*这里不能设置为auto，因为设置了绝对定位，auto不起作用*/
+	background-color: #fff;
+
+}
+.nav{
+	position:fix;
+	width:100%;
+	margin:0 auto;
+	background: black;
+	height:50px;
+	line-height:50px;
+	z-index:999;
+}
+.navul{
+	/*margin:0;
+	padding:0;  兼容各浏览器*/
+	line-height:40px;
+	font-size:25px;
+	list-style: none;
+    text-align:center;
+    overflow: hidden;
+    width:600px;
+    margin-left:100px;
+}
+.navul li{
+	float:left;
+	padding:5px 10px 5px 10px;
+	color:white;
+	text-align: center;
+}
+.nav1{
+	/*jquery里给标题添加的类*/
+	position:fixed;
+	top:0;
+	
+}
+/*搜索框*************************************************************************************************/
+.sousuo{
+	position: absolute;
+	top:5px;
+	right:40px;
+	padding:5px;
+	text-align: center;	
+	background-color:#fff;
+	border-radius:4px;
+}
+.sousuo-list{
+	position:absolute;
+	list-style:none;
+	border:2px solid black;
+	background-color: #fff;
+	opacity:1;
+	z-index:99;
+}
+.sousuo-list li{
+	padding-left:10px;
+}
+.sousuo-list li:hover{
+	background-color: #999;
+	text-decoration:underline;
+	cursor:pointer;
+}
+.sousuo form{
+	background-color: white;
+	text-align: center;
+	line-height:40px;
+	background-color:rgba(28,28,28,.9);
+	float:left;
+	border:0;
+}
+.sousuo .sousuo-input{
+	line-height:30px;
+	border:0;
+	width:350px;
+	outline:none;
+	float:left;/*一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+	如果你把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻*/
+}
+.sousuo .sousuo-sub{
+	background-image: url(../img/11.jpg);
+	width:30px;
+	height:30px;
+	/*background-position:-130px -33px ;*/
+	border:0;
+	float:left;
+}
+
+/**********************轮播图css*************************************************************************************/
+#container{
+	    
+    	width:800px;
+    	height:400px;
+    	position:relative;/*在文本流中的位置还存在*/
+    	overflow: hidden;
+    	left:50%;
+    	margin-left:-400px;
+    }
+    #list{
+    	width:5600px;
+    	height:400px;
+    	position:absolute;
+    	z-index:1;
+    	
+    }
+    #list img{
+    	float: left;
+    	width:800px;
+    }
+    #buttons{
+    	width:100px;
+    	height:10px;
+    	position:absolute;
+    	z-index:2;
+    	bottom:20px;
+    	left:50%;
+    }
+    #buttons span { 
+    	cursor:pointer;
+    	display:block;
+    	float:left;
+    	width:10px;
+    	height:10px;
+    	background: #fff;
+    	border:1px solid orangered;
+    	border-radius:50%;
+    	margin-right:5px;
+    	}
+    	 #buttons .on{
+    	 	background: orangered;
+    	  }
+    	.arrow { 
+    		cursor:pointer;
+    		display:none;
+    		width:40px;
+    		height:40px;
+    		position: absolute;
+            z-index:2;
+            top:200px;
+            line-height:40px;
+            text-align:center;
+            font-size:36px;
+            background-color: RGBA(0,0,0,0.3);
+            color:#fff;
+    		}
+    		 .arrow:hover { background-color: rgba(0,0,0,.7);}
+    		 #container:hover .arrow { display: block;}
+    		#prev { left: 20px;}
+            #next { right: 20px;}
+           
+ /**********************回到顶部css*************************************************************************************/
+	#gotop{
+		position:fixed;/*当为行内元素设置为fixed和absolute时，自动变为块元素，设置float时也会*/
+		background-image: url(../img/2.jpg);
+		right:5%;
+		bottom:30px;
+		width:40px;
+		height:40px;
+		opacity:0;
+		
+	}
+	#gotop:hover{
+		background-position: 0 -40px;
+	}
+
+
+/*********************摄影前世今生**************************************************************************************/
+#timer{
+	width:100%;
+	position: relative;/*文本流中的位置还存在*/
+    margin-top:100px;
+    left:0;
+    overflow: hidden;
+    height:410px;
+    border-top:1px solid black;
+}
+	#Ttitle{
+		line-height: 50px;
+		padding:5px;
+		font-family: '楷体';
+		font-size:20px;
+		font-weight:100;
+		 /* border-left:5px solid black;*/
+	}
+	#Tul{
+		position: absolute;
+		width:15%;
+	    top:50px;
+	    left:0;
+	    text-align:left;
+	    height:355px;
+	    border:1px solid black;
+	    -moz-border-radius:10px;
+	    background-color:#000 ;
+	    opacity:0.8;
+	    filter:alpha(opacity=80);
+	}
+	#Tul ul{
+		list-style:none;
+	}
+	#Tul ul li{
+		position:relative;
+		padding:10px;
+		height:50px;
+		line-height:50px ;
+		color: #fff;
+	}
+	#Tul ul li:hover:after{
+		content:'';
+		position: absolute;
+	    top:25px;
+	    left:100%;
+		display:inline;
+		color:#000;
+		border-bottom: 10px solid transparent;
+		border-left:10px solid #333;
+		/*border-right:10px solid transparent;*/
+		border-top:10px solid transparent;
+		z-index:1;
+	}
+	
+	#Timg{
+		position:absolute;
+		width:78%;
+		border:1px solid black;
+		top:50px;
+		right:0;
+		text-align:left;
+		height:355px;	
+	}
+	#Timg .timgpart{
+		position:absolute;
+		top:0;left:0;
+		width:100%;
+		height:355px;
+		opacity:0;
+		z-index:1;
+		overflow: hidden;
+	}
+		
+	#Timg .show{
+		opacity: 1;
+		z-index:6;
+	}
+	#Timg .timgpart img{
+		width:490px;
+		height:355px;
+	}
+	#Timg .timgpart .partintroduce{
+		position: absolute;
+		width:350px;
+		top:0;
+		right:5%;
+		letter-spacing:4px;
+		text-indent: 20px;
+		line-height:30px;
+		background: white;
+		height:100%;
+	}
+	#Timg .timgpart .picname{
+		display: block;
+		width:490px;
+		height:0;
+		line-height: 50px;;
+		position: absolute;
+		bottom:0;
+		font-size:20px;
+		left:0;
+		background: white;
+		opacity:0.8;
+		filter:alpha(opacity=80);
+	}
+
+
+/********************************************************************************************************************/
+/* 达人推荐*/
+.daren{
+		
+		width:100%;height:auto;
+		position: relative;
+		margin-top:100px;
+		left:0;
+		border-top:1px solid black;
+		overflow: hidden;
+	}
+	.daren-p{
+		line-height:50px;	
+		font-family: '楷体';
+		font-size:20px;
+		font-weight:100;
+		padding:5px;
+		/*border-left:5px solid black;*/	
+	}
+	.daren-main{
+		width:100%;height:auto;
+		position:relative;
+		}
+	.one-intro{/*ul*/
+		position:absolute;
+		width:10%;
+		list-style: none;
+		height:315px;
+		line-height:157px;
+	}
+	.one-intro li{
+		border:1px dashed red;
+		/*background-color: rgba(25,25,25,.8);
+		color:white;*/
+		cursor:pointer;
+		width:100%;
+		height:49%;
+		margin:0 0 5px 0;
+		font-family: '微软雅黑';
+		font-size:15px;
+		font-weight:400;
+		text-align: center;
+		}
+	.main-two{
+		width:930px;height:320px;
+		position: relative;
+		overflow: hidden;
+		top:0;
+		right:0;
+		float:right;
+		}
+	.two-ul{
+		position:relative;
+		list-style:none;
+		
+		width:1860px;height:320px;
+		margin:0 auto;
+		left:0;
+		}
+	.wrap{/*li*/
+		width:300px;height:300px;
+		font-size:50px;text-align:center;
+		position:relative;
+		margin:10px 0 10px 10px;
+		overflow: hidden;
+		float:left;
+		line-height:300px;} 
+	.wrap img{
+		width:300px;height:300px;
+		-webkit-transition:all .4s;	
+		}
+	.demo{/*li里的div*/
+			width:100%;height:100%;
+			position:absolute;
+			z-index:-1;
+			right:0;
+			bottom:0;			
+			color:white;
+			font-family: "宋体";
+			background-color: rgba(25,25,25,.7);
+			}
+	/*这里有一点疑问，类之间好像有顺序，还是说enter要写在一起，outer要写在一起，没弄明白*/	
+		.enter-bottom{
+				z-index:1;
+				-webkit-animation-name:enter-bottom;
+				-webkit-animation-duration:0.3s; 
+			}
+		.enter-top{
+			z-index:1;
+			-webkit-animation-name:enter-top;
+			-webkit-animation-duration:0.3s; 
+		}
+		.enter-left{
+			z-index:1;
+			animation:enter-left 0.3s ease-in;
+			-webkit-animation-name:enter-left;
+			-webkit-animation-duration:0.3s; 
+		}
+		.enter-right{
+			z-index:1;
+			animation:enter-right 0.3s ease-in;
+			-webkit-animation-name:enter-right;
+			-webkit-animation-duration:0.3s; 
+		}
+		
+		.outer-top{
+			-webkit-animation-name:outer-top;
+			-webkit-animation-duration:0.3s;
+		}
+		.outer-bottom{
+			-webkit-animation-name:outer-bottom;
+			-webkit-animation-duration:0.3s;
+		}
+		.outer-left{
+			-webkit-animation-name:outer-left;
+			-webkit-animation-duration:0.3s;
+		}
+		
+		.outer-right{
+			-webkit-animation-name:outer-right;
+			-webkit-animation-duration:0.3s;
+		}
+		@-webkit-keyframes enter-top{
+			from{top:-300px}
+			to{top:0}
+		}
+		@-webkit-keyframes outer-top{
+			from{top:0}
+			to{top:-300px}
+		}
+		@-webkit-keyframes enter-left{
+			from{left:-300px}
+			to{left:0}
+		}
+		@-webkit-keyframes outer-left{
+			from{left:0}
+			to{left:-300px}
+		}
+		@-webkit-keyframes enter-right{
+			from{right:-300px}
+			to{right:0}
+		}
+		@-webkit-keyframes outer-right{
+			from{right:0}
+			to{right:-300px}
+		}
+		
+		@-webkit-keyframes enter-bottom{
+			from{bottom:-300px}
+			to{bottom:0}
+		}
+		@-webkit-keyframes outer-bottom{
+			from{bottom:0}
+			to{bottom:-300px}
+		}
+		
+  /*****器材************************************************************************************************/
+  		.model{
+  			width:100%;height:80px;
+  			text-align: center;
+  			line-height:80px ;
+			position:absolute;
+			opacity:0;
+			bottom:0;
+			font-size:20px;			
+			color:white;
+			font-family: "宋体";
+			background-color: rgba(25,25,25,.7);
+  		}
+  		.model1{
+  			opacity:1;
+  			-webkit-transition:opacity .4s;
+			transition:opacity .4s;
+  		}
+  			
+  		
+/*****页脚**************************************************************************************************/
+.footer{
+	position:relative;
+	top:200px;
+	width:100%;height:100px;
+	background-color: rgba(25,25,25,0.85);
+	text-align: center;
+	color:white;
+	line-height:100px;
+	font-size:20px;
+	overflow: hidden;
+}
+.footer-s{
+	
+	width:150px;
+	height:80px;
+	
+	padding-left:10px;
+	
+}
+.span-2{
+		border-left:3px solid white;
+		font-size:15px;
+}
